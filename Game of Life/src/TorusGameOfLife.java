@@ -1,4 +1,5 @@
 public class TorusGameOfLife extends GameOfLife{
+
     TorusGameOfLife(){
 
     }
@@ -23,6 +24,8 @@ public class TorusGameOfLife extends GameOfLife{
         int neighbors = 0;
         for(int i = row - 1; i <= row + 1; i++){
             for(int j = column - 1; j <= column + 1; j++){
+
+                //Using modulus operator allows program to create torus-like array
                 neighbors += previous[(i % board.length + board.length) % board.length][(j % board[0].length + board[0].length) % board[0].length];
             }
         }
